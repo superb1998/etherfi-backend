@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: etherfi-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: API_SECRET
+        sync: false
+      - key: FRONTEND_URL
+        value: http://localhost:3000
+      - key: FRONTEND_URL_PROD
+        value: https://dapps-etherfi.web.app
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 5
